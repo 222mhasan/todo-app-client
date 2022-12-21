@@ -16,7 +16,7 @@ const EditPage = () => {
             task: task
         }
 
-        fetch(`http://localhost:5000/todo/${id}`, {
+        fetch(`https://todo-app-server-tau.vercel.app/todo/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +34,7 @@ const EditPage = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/todo/${id}`)
+        fetch(`https://todo-app-server-tau.vercel.app/todo/${id}`)
             .then(res => res.json())
             .then(data => {
                 setTodoTask(data)

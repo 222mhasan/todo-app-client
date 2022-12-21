@@ -13,7 +13,7 @@ const TodoList = () => {
             task: task
         }
 
-        fetch('http://localhost:5000/todo', {
+        fetch('https://todo-app-server-tau.vercel.app/todo', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -22,7 +22,7 @@ const TodoList = () => {
         })
             .then(res => res.json())
             .then(data => {
-                fetch('http://localhost:5000/todo')
+                fetch('https://todo-app-server-tau.vercel.app/todo')
                     .then(res => res.json())
                     .then(data => {
                         setTodoTasks(data)
@@ -38,12 +38,12 @@ const TodoList = () => {
     }
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/todo?id=${id}`, {
+        fetch(`https://todo-app-server-tau.vercel.app/todo?id=${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(data => {
-                fetch('http://localhost:5000/todo')
+                fetch('https://todo-app-server-tau.vercel.app/todo')
                     .then(res => res.json())
                     .then(data => {
                         setTodoTasks(data)
@@ -58,7 +58,7 @@ const TodoList = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/todo')
+        fetch('https://todo-app-server-tau.vercel.app/todo')
             .then(res => res.json())
             .then(data => {
                 setTodoTasks(data)
